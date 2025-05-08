@@ -4,6 +4,8 @@
 
 package com.baruk.ecma;
 
+import com.baruk.ecma.gui.Principal;
+
 /**
  *
  * @author ikram
@@ -11,6 +13,9 @@ package com.baruk.ecma;
 public class Ecma {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+       
+        Principal pantalla = new Principal();
+        pantalla.setVisible(true);
+        pantalla.setLocationRelativeTo(null);
     }
 }
