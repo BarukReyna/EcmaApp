@@ -4,6 +4,7 @@
  */
 package com.baruk.ecma.logica;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 import javax.persistence.Basic;
@@ -23,7 +24,7 @@ import javax.persistence.TemporalType;
  * @author ikram
  */
 @Entity
-public class Alumno {
+public class Alumno implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -36,6 +37,9 @@ public class Alumno {
     
     @Temporal (TemporalType.DATE)
     private LocalDate fechaInscripcion;
+    
+    @Temporal (TemporalType.DATE)
+    private LocalDate fechaPago;
     
     @ManyToOne 
     private PersonaContacto personaContacto;
@@ -60,18 +64,28 @@ public class Alumno {
     public Alumno() {
     }
 
-    public Alumno(Long id_alumno, String nombre, int edad, String telefono, LocalDate fechaInscripcion, PersonaContacto personaContacto, List<Clase> clases, List<Evento> eventos, List<AsistenciaAlumno> asistenciasAlumnos) {
+    public Alumno(Long id_alumno, String nombre, int edad, String telefono, LocalDate fechaInscripcion, LocalDate fechaPago, PersonaContacto personaContacto, List<Clase> clases, List<Evento> eventos, List<AsistenciaAlumno> asistenciasAlumnos) {
         this.id_alumno = id_alumno;
         this.nombre = nombre;
         this.edad = edad;
         this.telefono = telefono;
         this.fechaInscripcion = fechaInscripcion;
+        this.fechaPago = fechaPago;
         this.personaContacto = personaContacto;
         this.clases = clases;
         this.eventos = eventos;
         this.asistenciasAlumnos = asistenciasAlumnos;
     }
 
+    public LocalDate getFechaPago() {
+        return fechaPago;
+    }
+
+    public void setFechaPago(LocalDate fechaPago) {
+        this.fechaPago = fechaPago;
+    }
+
+    
     
 
     public Long getId_alumno() {

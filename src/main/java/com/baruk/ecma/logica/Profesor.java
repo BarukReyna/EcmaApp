@@ -12,6 +12,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
@@ -26,6 +28,8 @@ public class Profesor {
     private String nombre;
     private String telefono;
     private int cantHoras;
+    
+    @Temporal (TemporalType.DATE)
     private LocalDate fechaPago;
     
     @OneToMany (mappedBy = "profesor")

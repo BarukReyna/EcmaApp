@@ -11,6 +11,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
@@ -23,6 +25,8 @@ public class Evento {
     private Long id_evento;
     
     private String nombre;
+    
+    
     private LocalDate fecha;
     private String tipo;
     
