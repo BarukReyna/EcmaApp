@@ -4,10 +4,12 @@
  */
 package com.baruk.ecma.logica;
 
+import com.baruk.ecma.persistencia.ControladoraPersistencia;
+
 /**
  *
  * @author ikram
  */
 public class Controladora {
-    
+    ControladoraPersistencia controladoraPersis;
 }
